@@ -1,0 +1,16 @@
+import boto3
+
+# 配置AWS认证信息
+aws_access_key_id = 'YOUR_AWS_ACCESS_KEY_ID'
+aws_secret_access_key = 'YOUR_AWS_SECRET_ACCESS_KEY'
+region_name = 'YOUR_AWS_REGION_NAME'
+
+# 创建S3客户端
+s3 = boto3.client('s3', aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key, region_name=region_name)
+
+# 上传文件到S3桶
+bucket_name = 'YOUR_S3_BUCKET_NAME'
+file_path = 'YOUR_FILE_PATH'
+object_name = 'YOUR_OBJECT_NAME'
+
+s3.upload_file(file_path, bucket_name, object_name)
